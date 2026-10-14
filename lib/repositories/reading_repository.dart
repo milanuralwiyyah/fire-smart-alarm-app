@@ -25,4 +25,11 @@ class ReadingRepository {
       }).toList();
     });
   }
+
+  double averageTemperature(List<Reading> readings) {
+  final recent = readings.take(10).toList();
+  if (recent.isEmpty) return 0.0;
+  final total = recent.map((r) => r.temperature).reduce((a, b) => a + b);
+  return total / recent.length;
+}
 }
