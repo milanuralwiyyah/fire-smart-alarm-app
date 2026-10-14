@@ -100,6 +100,61 @@ class DashboardScreen extends StatelessWidget {
                     ],
                   ),
 
+                  // ====== MULAI: KARTU PRAKTIK VARIAN A-D ======
+
+                  // Varian A
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: _buildSensorCard(
+                      icon: Icons.analytics,
+                      iconColor: const Color(0xFF9E5148),
+                      title: 'A: Rata-rata Suhu 10 Data',
+                      value:
+                          '${_repository.averageTemperature(readings).toStringAsFixed(1)} °C',
+                    ),
+                  ),
+
+                  // Varian B
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: _buildSensorCard(
+                      icon: Icons.trending_up,
+                      iconColor: const Color(0xFF9E5148),
+                      title: 'B: Suhu Tertinggi 10 Data',
+                      value:
+                          '${_repository.highestTemperature(readings).toStringAsFixed(1)} °C',
+                    ),
+                  ),
+
+                  // Varian C
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: _buildSensorCard(
+                      icon: Icons.trending_down,
+                      iconColor: const Color(0xFF9E5148),
+                      title: 'C: Suhu Terendah 10 Data',
+                      value:
+                          '${_repository.lowestTemperature(readings).toStringAsFixed(1)} °C',
+                    ),
+                  ),
+
+                  // Varian D
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: _buildSensorCard(
+                      icon: Icons.warning_rounded,
+                      iconColor: const Color(0xFF9E5148),
+                      title: 'D: Status Bahaya (20 Data)',
+                      value: '${_repository.dangerCount(readings)}',
+                    ),
+                  ),
+
+                  // ====== SELESAI: KARTU PRAKTIK VARIAN A-D ======
+
                   const SizedBox(height: 28),
 
                   _buildMq2Card(latest),
